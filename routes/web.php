@@ -25,6 +25,11 @@ Route::post('/login',[
     'uses' => "WebController@login",
     'as' => 'login'
 ]);
+//agregar al server
+Route::get('/clientes',[
+    'uses' => 'WebController@clientesView',
+    'as' => 'clientes.view'
+]);
 
 //movil api
 Route::get('/gettrabajadores/{id}',[

@@ -40,4 +40,14 @@ class WebController extends Controller
         }
 
     }
+
+    // agregar al server
+    function clientesView(Request $request){
+        if ($request->cookie('rootfn') != null) {
+            $id = $request->cookie('rootprfn');
+            return view('clientes',["idusr"=>$id]);
+        } else {
+            return redirect()->route('index');
+        }
+    }
 }
